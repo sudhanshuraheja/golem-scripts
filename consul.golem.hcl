@@ -1,4 +1,4 @@
-recipe "setup-local" "local" {
+recipe "consul.setup-local" "local" {
     commands = [
         // consul-agent-ca.pem -> public key
         // consul-agent-ca-key.pem -> private key

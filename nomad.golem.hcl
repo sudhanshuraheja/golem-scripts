@@ -1,4 +1,4 @@
-recipe "setup-local" "local" {
+recipe "nomad.setup-local" "local" {
     kv {
         path = "@golem.NOMAD_DC.nomad_encryption_key"
         value = "rand32"
@@ -76,7 +76,7 @@ EOF
     }
 }
 
-recipe "setup-remote" "remote" {
+recipe "nomad.setup-remote" "remote" {
     match {
         attribute = "tags"
         operator = "contains"
@@ -144,7 +144,7 @@ recipe "setup-remote" "remote" {
     }
 }
 
-recipe "list" "local" {
+recipe "nomad.list" "local" {
     commands = [
         "nomad node status -allocs",
         "nomad job status",
@@ -152,7 +152,7 @@ recipe "list" "local" {
     ]
 }
 
-recipe "config-client" "remote" {
+recipe "nomad.config-client" "remote" {
     match {
         attribute = "tags"
         operator = "contains"
@@ -186,7 +186,7 @@ recipe "config-client" "remote" {
     ]
 }
 
-recipe "config-server" "remote" {
+recipe "nomad.config-server" "remote" {
     match {
         attribute = "tags"
         operator = "contains"
@@ -216,7 +216,7 @@ recipe "config-server" "remote" {
     ]
 }
 
-recipe "tail" "remote" {
+recipe "nomad.tail" "remote" {
     match {
         attribute = "tags"
         operator = "contains"

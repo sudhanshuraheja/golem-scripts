@@ -1,4 +1,4 @@
-recipe "build" "local" {
+recipe "go.build" "local" {
     commands = [
         "mkdir -p ./bin",
         "CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/@golem.APP-linux-amd64-$(git describe --tags) main.go",
@@ -7,7 +7,7 @@ recipe "build" "local" {
     ]
 }
 
-recipe "tidy" "local" {
+recipe "go.tidy" "local" {
     commands = [
         // download the latest packages
         "go get -u",
