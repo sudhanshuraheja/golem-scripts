@@ -130,9 +130,6 @@ recipe "nomad.setup-remote" "remote" {
             }
             install_no_upgrade = ["nomad"]
         }
-        apt {
-            purge = ["consul"]
-        }
         commands = [
             "sudo mkdir --parents /opt/nomad",
             "sudo chmod 700 /etc/nomad.d",
